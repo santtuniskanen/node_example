@@ -15,8 +15,8 @@ app.get('/example2/:fname?', function(request, response){
 });
 
 app.post('/', function(request, response){
-    response.send("Post method was called");
-    console.log("Post method was called");
+    response.send(response.body);
+    console.log(response.body);
 });
 
 app.listen(port, function(){
