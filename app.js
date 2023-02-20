@@ -10,6 +10,10 @@ app.get('/esim1', function(request, response){
     response.send("This is endpoint /esim1...");
 });
 
+app.get('/esim2/:fname?', function(request, response){
+    response.send("Hello "+request.params.fname)
+});
+
 app.listen(port, function(){
     console.log("Application listens to port " + port);
 });
