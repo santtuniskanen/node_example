@@ -19,8 +19,9 @@ app.get('/example/:fname?')
 </pre>
 
 The variable can be accessed with <pre>request.params.{variable}</pre>
+Example
 <pre>
 app.get('/example2/:fname?', function(request, response){
-    response.send("Hello "+request.params.fname)
+    response.send("Hello, "+request.params.fname)
 });
 </pre>
