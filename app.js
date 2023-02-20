@@ -29,7 +29,7 @@ app.get('/example2/:fname?', function(request, response){
 });
 
 app.post('/', function(request, response){
-    response.send(request.body);
+    response.json(request.body);
     console.log(request.body.fname);
 });
 
