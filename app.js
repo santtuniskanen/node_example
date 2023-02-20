@@ -4,10 +4,10 @@ const port='3000';
 
 app.get('/', function(request, response){
     console.log("test1");
-    response.send("Express example");
+    response.send("Express Example");
 });
 app.get('/esim1', function(request, response){
-    response.send("This is endpoint /esim1");
+    response.send("This is endpoint /esim1...");
 });
 
 app.listen(port, function(){
