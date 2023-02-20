@@ -25,3 +25,11 @@ app.get('/example2/:fname?', function(request, response){
     response.send("Hello, "+request.params.fname)
 });
 </pre>
+
+## Middleware function
+
+Middleware is a function which is called automatically and its definition is 
+done with the word **use**.
+<pre>
+
+</pre>
