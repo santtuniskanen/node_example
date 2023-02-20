@@ -20,4 +20,9 @@ controller.put('/:id', function(request, response){
     console.log(request.body);
 })
 
+controller.delete('/:id', function(request, response){
+    response.json("Deletes the book whose id="+request.params.id);
+    console.log("Deletes the book whose id="+request.params.id);
+})
+
 module.exports=controller;
