@@ -16,13 +16,13 @@ controller.post('/', function(request, response){
 })
 
 controller.put('/:id', function(request, response){
-    response.json("Changes the book whose id="+request.params.id);
+    response.json("Changes the book where id="+request.params.id);
     console.log(request.body);
 })
 
 controller.delete('/:id', function(request, response){
-    response.json("Deletes the book whose id="+request.params.id);
-    console.log("Deletes the book whose id="+request.params.id);
+    response.json("Deletes the book where id="+request.params.id);
+    console.log("Deletes the book where id="+request.params.id);
 })
 
 module.exports=controller;
