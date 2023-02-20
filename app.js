@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port='3000';
 
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
 app.use(function(request, response, next){
     console.log("I'm a Middleware 1")
     next();
@@ -26,8 +29,8 @@ app.get('/example2/:fname?', function(request, response){
 });
 
 app.post('/', function(request, response){
-    response.send(response.body);
-    console.log(response.body);
+    response.send(request.body);
+    console.log(request.body.fname);
 });
 
 app.listen(port, function(){

@@ -30,6 +30,14 @@ app.get('/example2/:fname?', function(request, response){
 
 Middleware is a function which is called automatically and its definition is 
 done with the word **use**.
-<pre>
 
+Middleware is required in order for our application to be able to handle JSON data.
+<pre>
+app.use(express.json());
+</pre>
+
+It's also needed in order to send "form-urlencoded" data with
+POST and PUT methods.
+<pre>
+app.use(express.urlencoded({encoded:false}));
 </pre>
