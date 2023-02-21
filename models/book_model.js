@@ -11,6 +11,8 @@ const book={
     getOneBook:function(id){
         return bookArray[id];
     },
+    // The following functions have a risk of SQL Injection,
+    // but they are like this only for the demonstration (Will be changed soon)
     addBook:function(addData){
         let sql='insert into book(name,author,isbn) values('+addData.name+','+addData.author+','+addData.isbn+')';
         return sql;
