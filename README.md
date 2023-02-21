@@ -14,6 +14,7 @@ app.get('/example/:fname')
 
 The variable must be added to the link, otherwise it will throw a GET error.
 This can be fixed by adding a question mark after the variable name.
+Then it would display "undefined" in the place of name.
 <pre>
 app.get('/example/:fname?')
 </pre>
