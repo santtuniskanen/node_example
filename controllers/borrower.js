@@ -1,6 +1,6 @@
 const express=require('express'); // Refers to express installed to node modules
 const controller=express.Router();
-const borrower=require('../models/borrower_models');
+const borrower=require('../models/borrower_model');
 
 // Implementing all borrower-tables CRUD-operations
 // Create Read Update Delete
@@ -58,7 +58,6 @@ controller.delete('/:id', function(request, response){
             response.send(dbData);
         }
     });
-    
 })
 
 module.exports=controller;
