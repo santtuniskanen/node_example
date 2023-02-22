@@ -5,8 +5,14 @@ const book=require('../models/book_model');
 // Implementing all book-tables CRUD-operations
 // Create Read Update Delete
 controller.get('/', function(request, response){
-    let data=book.getAllBooks();
-    response.json(data);
+    book.getAllBooks(function(error, dbData){
+        if(error){
+            response.send(error);
+        }
+        else {
+            response.send(dbData);
+        }
+    });
 });
 
 controller.get('/:id', function(request, response){

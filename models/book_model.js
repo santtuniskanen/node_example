@@ -1,3 +1,5 @@
+const db=require('../database');
+
 const bookArray=[
     {name:"C++", author:"Teppo Testi", isbn:"12-34-56-77"},
     {name:"JavaScript", author:"Aino Testi", isbn:"12-34-56-77"},
@@ -5,8 +7,8 @@ const bookArray=[
 ];
 
 const book={
-    getAllBooks:function(){
-        return bookArray;
+    getAllBooks:function(callback){
+        return db.query("select * from book", callback);
     },
     getOneBook:function(id){
         return bookArray[id];
