@@ -42,3 +42,13 @@ POST and PUT methods.
 <pre>
 app.use(express.urlencoded({encoded:false}));
 </pre>
+
+# express_database_example
+
+## Connection to database
+
+Root user isn't preferable, rather create something else
+<pre>
+create user 'tvt22spo'@localhost' identified by 'tvtpass';
+grant all on library.* to 'tvt22spo'@localhost';
+</pre>

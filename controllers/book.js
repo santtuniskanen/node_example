@@ -16,25 +16,49 @@ controller.get('/', function(request, response){
 });
 
 controller.get('/:id', function(request, response){
-    let data=book.getOneBook(request.params.id);
-    response.json(data);
+    book.getOneBook(request.params.id, function(error, dbData){
+        if(error) {
+            response.send(error);
+        }
+        else {
+            response.send(dbData[0]);
+        }
+    });
 })
 
 controller.post('/', function(request, response){
-    let data=book.addBook(request.body);
-    response.json(data);
+    book.addBook(request.body, function(error, dbData){
+        if(error){
+            response.send(error);
+        }
+        else {
+            response.send(dbData);
+        }
+    });
+
 })
 
 controller.put('/:id', function(request, response){
-    let data=book.updateBook(request.params.id, request.body);
-    response.json(data);
-    console.log(request.body);
+    book.updateBook(request.params.id, request.body, function(error, dbData){
+        if (error) {
+            response.send(error);
+        }
+        else { 
+            response.send(dbData);
+        }
+    });
 })
 
 controller.delete('/:id', function(request, response){
-    let data=book.deleteBook(request.params.id);
-    response.json(data);
-    console.log("Deletes the book where id="+request.params.id);
+    book.deleteBook(request.params.id, function(error, dbData){
+        if(error){
+            response.send(error);
+        }
+        else {
+            response.send(dbData);
+        }
+    });
+    
 })
 
 module.exports=controller;
