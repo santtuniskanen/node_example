@@ -66,3 +66,4 @@ process.env.port
 process.env.mysqlString
 </pre>
 I'm only bringing in the .env file to GitHub because there is no sensitive information and this whole repository is made after a practice set I received from school for our databases and APIs class.
+In a real world scenario the .env file would be included in the gitignore and a lot of the variables wouldn't necessarily be determined by us anyways, rather the cloud provider like Azure. If someone managed to get access to our source code, they most likely would not be able to access that environment variables.
