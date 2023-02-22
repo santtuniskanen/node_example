@@ -58,10 +58,11 @@ grant all on library.* to 'tvt22spo'@localhost';
 The file .env isn't usually brought to GitHub, since it can contain sensitive information eg. the authentication to your database. You can include so called environment variables inside the .env file, like in this case:
 <pre>
 port=3000
-mysqlString="mysql://{user}:{pass}@localhost:3306/library"
+mysqlString="mysql://tvt22spo:tvtpass@localhost:3306/library"
 </pre>
 You can point to these variables in your code like this
 <pre>
 process.env.port
 process.env.mysqlString
 </pre>
+I'm only bringing in the .env file to GitHub because there is no sensitive information and this whole repository is made after a practice set I received from school for our databases and APIs class.
