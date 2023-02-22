@@ -5,7 +5,7 @@ const user=require('../models/user_model');
 // Implementing all user-tables CRUD-operations
 // Create Read Update Delete
 controller.get('/', function(request, response){
-    user.getAllusers(function(error, dbData){
+    user.getAllUsers(function(error, dbData){
         if(error){
             response.send(error);
         }
@@ -16,7 +16,7 @@ controller.get('/', function(request, response){
 });
 
 controller.get('/:id', function(request, response){
-    user.getOneuser(request.params.id, function(error, dbData){
+    user.getOneUser(request.params.id, function(error, dbData){
         if(error) {
             response.send(error);
         }
@@ -27,7 +27,7 @@ controller.get('/:id', function(request, response){
 })
 
 controller.post('/', function(request, response){
-    user.adduser(request.body, function(error, dbData){
+    user.addUser(request.body, function(error, dbData){
         if(error){
             response.send(error);
         }
@@ -39,7 +39,7 @@ controller.post('/', function(request, response){
 })
 
 controller.put('/:id', function(request, response){
-    user.updateuser(request.params.id, request.body, function(error, dbData){
+    user.updateUser(request.params.id, request.body, function(error, dbData){
         if (error) {
             response.send(error);
         }
@@ -50,7 +50,7 @@ controller.put('/:id', function(request, response){
 })
 
 controller.delete('/:id', function(request, response){
-    user.deleteuser(request.params.id, function(error, dbData){
+    user.deleteUser(request.params.id, function(error, dbData){
         if(error){
             response.send(error);
         }

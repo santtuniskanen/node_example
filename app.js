@@ -4,12 +4,14 @@ const port='3000';
 
 const bookRouter=require('./controllers/book');
 const borrowerRouter=require('./controllers/borrower');
+const userRouter=require('./controllers/user');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 app.use('/book',bookRouter);
 app.use('/borrower',borrowerRouter);
+app.use('/user',userRouter);
 
 app.use(function(request, response, next){
     console.log("I'm a Middleware 1")
