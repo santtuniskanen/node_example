@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv=require('dotenv');
 
-app.use(dotenv.config());
+dotenv.config();
 
 const bookRouter=require('./controllers/book');
 const borrowerRouter=require('./controllers/borrower');
@@ -43,6 +43,6 @@ app.post('/', function(request, response){
     console.log(request.body.fname);
 });
 
-app.listen([process.env.port], function(){
-    console.log("Application listens to port " + port);
+app.listen(process.env.port, function(){
+    console.log("Application listens to port " + process.env.port);
 });
