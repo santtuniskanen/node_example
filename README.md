@@ -52,3 +52,16 @@ Root user isn't preferable, rather create something else
 create user 'tvt22spo'@localhost' identified by 'tvtpass';
 grant all on library.* to 'tvt22spo'@localhost';
 </pre>
+
+## .env
+
+The file .env isn't usually brought to GitHub, since it can contain sensitive information eg. the authentication to your database. You can include so called environment variables inside the .env file, like in this case:
+<pre>
+port=3000
+mysqlString="mysql://{user}:{pass}@localhost:3306/library"
+</pre>
+You can point to these variables in your code like this
+<pre>
+process.env.port
+process.env.mysqlString
+</pre>
