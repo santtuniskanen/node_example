@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const port='3000';
+const dotenv=require('dotenv');
+
+app.use(dotenv.config());
 
 const bookRouter=require('./controllers/book');
 const borrowerRouter=require('./controllers/borrower');
@@ -41,6 +43,6 @@ app.post('/', function(request, response){
     console.log(request.body.fname);
 });
 
-app.listen(port, function(){
+app.listen([process.env.port], function(){
     console.log("Application listens to port " + port);
 });
