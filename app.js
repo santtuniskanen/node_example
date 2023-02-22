@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
 const port='3000';
+
 const bookRouter=require('./controllers/book');
+const borrowerRouter=require('./controllers/borrower');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 app.use('/book',bookRouter);
+app.use('/borrower',borrowerRouter);
 
 app.use(function(request, response, next){
     console.log("I'm a Middleware 1")

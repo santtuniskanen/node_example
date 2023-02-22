@@ -1,11 +1,5 @@
 const db=require('../database');
 
-/* const bookArray=[
-    {name:"C++", author:"Teppo Testi", isbn:"12-34-56-77"},
-    {name:"JavaScript", author:"Aino Testi", isbn:"12-34-56-77"},
-    {name:"Databases", author:"Daniel Datafield", isbn:"12-34-56-77"}
-]; */
-
 const book={
     getAllBooks:function(callback){
         return db.query("select * from book", callback);
@@ -15,7 +9,6 @@ const book={
     },
     addBook:function(addData, callback){
         return db.query("insert into book(name,author,isbn) values(?,?,?)", [addData.name, addData.author, addData.isbn], callback);
-        return sql;
     },
     updateBook:function(id,updateData,callback){
         return db.query("update book set name=?, author=?, isbn=? where id_book=?",[updateData.name, updateData.author, updateData.isbn, id], callback);
